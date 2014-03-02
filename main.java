@@ -5,7 +5,7 @@ import java.awt.*;
  * Animation example using objects to create
  * complicated patterns.
  *
- * @author zayed and jose
+ * @author Zayed Al Falasi and José González
  * @version Jan 2014
  */
 
