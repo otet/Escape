@@ -6,13 +6,8 @@ import java.awt.*;
  * 
  *
  * @author Zayed Al Falasi and José González
-<<<<<<< HEAD
- * 
- *
- * @version Jan 2014
-=======
+
  * @version Mar 2014
->>>>>>> af05134f16f8a180cbc66f80dab95f5e5f66e456
  */
 
 public class main extends Applet implements Runnable {
