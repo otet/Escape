@@ -6,7 +6,10 @@ import java.awt.*;
  * 
  *
  * @author Zayed Al Falasi and José González
+<<<<<<< HEAD
 
+=======
+>>>>>>> af05134f16f8a180cbc66f80dab95f5e5f66e456
  * @version Mar 2014
  */
 
