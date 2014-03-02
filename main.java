@@ -2,10 +2,12 @@ import java.applet.*;
 import java.awt.*;
 
 /**
- * Animation example using objects to create
- * complicated patterns.
+ * Programming Computer Games
+ * 
  *
  * @author Zayed Al Falasi and José González
+ * 
+ *
  * @version Jan 2014
  */
 
