@@ -6,7 +6,7 @@ import java.awt.*;
  * complicated patterns.
  *
  * @author Zayed Al Falasi and José González
- * @version Jan 2014
+ * @version Mar 2014
  */
 
 public class main extends Applet implements Runnable {
