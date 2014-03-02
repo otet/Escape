@@ -11,7 +11,12 @@ import java.awt.*;
 
 public class main extends Applet implements Runnable {
 
-  Thread anim = null;  // animation thread
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+Thread anim = null;  // animation thread
   
   public static final int WIDTH = 700; // Applet size
   public static final int HEIGHT = 500;
