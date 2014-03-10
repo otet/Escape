@@ -10,11 +10,12 @@ import java.awt.*;
  * @version Mar 2014
  */
 
-public class main extends Applet implements Runnable {
+/*
+public class Screen extends Applet implements Runnable {
 
-  /**
+  *//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = 1L;
 
 Thread anim = null;  // animation thread
@@ -77,3 +78,5 @@ Thread anim = null;  // animation thread
     anim = null;  // stop animation thread
   } 
 }
+
+*/
