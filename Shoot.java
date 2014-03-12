@@ -27,7 +27,6 @@ public class Shoot extends JApplet implements  Runnable {
 	int height = 500;
 	
 	private Player player1;
-	private Player player2;
 	private Graphics graphics;
 	public Image image = null;
 
@@ -49,7 +48,7 @@ public class Shoot extends JApplet implements  Runnable {
 		setFocusable(true);
 		setVisible(true);
 		
-		player1 = new Player(200, 407, 20, 90, 10, Color.green);
+		player1 = new Player(200, 407, 20, 90, 10, Color.ORANGE);
 		
 
 		
@@ -97,11 +96,9 @@ public class Shoot extends JApplet implements  Runnable {
 			}
 		} else if (player1.getHealth() == 0){
 			g.setColor(Color.yellow);
-			g.drawString("Player 2 Wins!", 250, 190);
-		} else if (player2.getHealth() == 0){
-			g.setColor(Color.yellow);
-			g.drawString("Player 1 Wins!", 250, 190);
-		}
+			g.drawString("You Lose!", 250, 190);
+		} 
+		
 		
 		g.setColor(Color.white);
     	g.drawString("Health: " + Integer.toString(player1.getHealth()), 10, 15);
@@ -154,14 +151,10 @@ public class Shoot extends JApplet implements  Runnable {
 				break;
 				
 			case KeyEvent.VK_SPACE:
-				Bullet player1Bullet = new Bullet(player2, 1, player1.getxPos() + 20, player1.getyPos() + 45, 4 , 4, Color.white);
-				bullets.add(player1Bullet);
+				Bullet player1Bullet = new Bullet(player1, -1, player1.getxPos() + 9, player1.getyPos(), 2, 10, Color.white);
+				bullets.add(player1Bullet); 
 				break;
 				
-			case KeyEvent.VK_ENTER:
-				Bullet player2Bullet = new Bullet(player1, -1, player2.getxPos() - 4, player2.getyPos() + 45, 4 , 4, Color.white);
-				bullets.add(player2Bullet);
-				break;
 		} 
 		
 	

@@ -7,13 +7,13 @@ import java.awt.Toolkit;
 
 public class Bullet extends GameInit {
 	
-	private int dx;
+	private int dy;
 	private Player player;
 	private Color c;
 	
-	public Bullet(final Player player, final int dx, final int xPos, final int yPos, final int width, final int height, final Color c ){
+	public Bullet(final Player player, final int dy, final int xPos, final int yPos, final int width, final int height, final Color c ){
 		this.player = player;
-		this.dx = dx;
+		this.dy = dy;
 		this.xPos = xPos;
 		this.yPos = yPos;
 		this.height = height;
@@ -25,7 +25,7 @@ public class Bullet extends GameInit {
 	@Override
 	public void draw (Graphics g) {
 		g.setColor(c);
-		g.fillRect(xPos, yPos, 5, 2);
+		g.fillRect(xPos, yPos, 2, 5);
 	}
 
 	@Override
@@ -36,20 +36,20 @@ public class Bullet extends GameInit {
 			shooting.bullets.remove(this); 
 					
 		} */ 
-		if (xPos < 5 || xPos > 595){
+		if (xPos < 5 || xPos > 495){
 			shooting.bullets.remove(this);
 		} else {
-			xPos += dx;
-			rect.x += dx;
+			yPos += dy;
+			rect.y += dy;
 		}
 	}
 
-	public int getDx() {
-		return dx;
+	public int getDy() {
+		return dy;
 	}
 
-	public void setDx(int dx) {
-		this.dx = dx;
+	public void setDy(int dy) {
+		this.dy = dy;
 	}
 
 	@Override

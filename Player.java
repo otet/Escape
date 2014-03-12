@@ -55,13 +55,12 @@ public class Player extends GameInit {
 	void update(final Shoot shooting, final int id) {
 		if (id == 1){
 			if (shooting.player1Left){
-				if(!(xPos < 26)){
+				if(!(xPos < 10)){
 					xPos--;
 					rect.x--;
 					
-		
-			}else if (shooting.player1Right){
-				if (!(xPos > shooting.getHeight() - 96)){
+		}else if (shooting.player1Right){
+				if (!(xPos > shooting.getWidth() - 96)){
 					xPos++;
 					rect.x++;
 			}
