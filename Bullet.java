@@ -31,6 +31,8 @@ public class Bullet extends GameInit {
 	@Override
 	void update(final Shoot shooting, final int id) {
 		
+	// Code for subtracting health when player is subject to crash
+		
 		/*if (rect.intersects(player.rect)){
 			player.setHealth(player.getHealth() - 1);
 			shooting.bullets.remove(this); 

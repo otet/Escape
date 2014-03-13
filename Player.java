@@ -53,14 +53,16 @@ public class Player extends GameInit {
 
 	@Override
 	void update(final Shoot shooting, final int id) {
-		if (id == 1){
+	
 			if (shooting.player1Left){
 				if(!(xPos < 10)){
 					xPos--;
 					rect.x--;
 					
-		}else if (shooting.player1Right){
-				if (!(xPos > shooting.getWidth() - 96)){
+		}
+				}
+			if (shooting.player1Right){
+				if (!(xPos > shooting.getWidth() - 25)){
 					xPos++;
 					rect.x++;
 			}
@@ -68,17 +70,18 @@ public class Player extends GameInit {
 		}
 			
 			
+			
 			}
-			}
-		}
 		
-	
-
-
-
-	
-
 	}
+	
+
+
+
+	
+
+	
+	
 	
 	
 	
