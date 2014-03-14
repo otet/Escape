@@ -27,6 +27,7 @@ public class Shoot extends JApplet implements  Runnable {
 	int height = 500;
 	
 	private Player player1;
+	private Block block1;
 	private Graphics graphics;
 	public Image image = null;
 
@@ -43,13 +44,14 @@ public class Shoot extends JApplet implements  Runnable {
 		//setTitle("Galagamza");
 		
 		this.setSize(width,height);
-		setBackground(Color.BLACK);
+		setBackground(Color.WHITE);
 		addKeyListener(new KeyL());
 		setFocusable(true);
 		setVisible(true);
 		
-		player1 = new Player(200, 407, 20, 90, 10, Color.ORANGE);
+		player1 = new Player(200, 407, 20, 90, 10, Color.BLACK);
 		
+		block1 = new Block(block1, 200, 100, 20, 20, Color.BLACK);
 
 		
 		
@@ -100,7 +102,7 @@ public class Shoot extends JApplet implements  Runnable {
 		} 
 		
 		
-		g.setColor(Color.white);
+		g.setColor(Color.BLACK);
     	g.drawString("Health: " + Integer.toString(player1.getHealth()), 10, 15);
     
 	
@@ -108,6 +110,9 @@ public class Shoot extends JApplet implements  Runnable {
     	
 		player1.draw(g);
 	    player1.update(this, 1);
+	    
+	    block1.draw(g);
+	    block1.update(this, 2);
 
 		
 		
@@ -151,7 +156,7 @@ public class Shoot extends JApplet implements  Runnable {
 				break;
 				
 			case KeyEvent.VK_SPACE:
-				Bullet player1Bullet = new Bullet(player1, -1, player1.getxPos() + 9, player1.getyPos(), 2, 10, Color.white);
+				Bullet player1Bullet = new Bullet(player1, -1, player1.getxPos() + 9, player1.getyPos(), 2, 10, Color.BLACK);
 				bullets.add(player1Bullet); 
 				break;
 				
@@ -191,7 +196,7 @@ public class Shoot extends JApplet implements  Runnable {
 			
 			repaint();
 			try {
-				Thread.sleep(150);
+				Thread.sleep(200);
 			} catch (InterruptedException e) {}
 		}
 	}

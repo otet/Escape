@@ -9,6 +9,7 @@ public class Bullet extends GameInit {
 	
 	private int dy;
 	private Player player;
+	private Block block;
 	private Color c;
 	
 	public Bullet(final Player player, final int dy, final int xPos, final int yPos, final int width, final int height, final Color c ){
@@ -38,12 +39,20 @@ public class Bullet extends GameInit {
 			shooting.bullets.remove(this); 
 					
 		} */ 
-		if (xPos < 5 || xPos > 495){
+		
+
+		if (xPos < 5 || xPos > 495 && rect.intersects(block.rect)){
 			shooting.bullets.remove(this);
 		} else {
 			yPos += dy;
 			rect.y += dy;
 		}
+		
+	/*	if (rect.intersects(block.rect)){
+			
+		shooting.bullets.remove(this); 
+				
+	}  */
 	}
 
 	public int getDy() {
