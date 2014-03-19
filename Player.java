@@ -32,7 +32,7 @@ public class Player extends GameInit {
 	@Override
 	public void draw (Graphics g) {
 		g.setColor(c);
-		g.fillRect(xPos, yPos, 20, 90);
+		g.fillRect(xPos, yPos, 20, 45);
 	}
 
 	public int getId() {

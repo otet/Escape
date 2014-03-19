@@ -11,6 +11,7 @@ public class Block extends GameInit {
 	private int id;
 	private Color c;
 	private Block block;
+	private boolean hit;
 	
 	
 	
@@ -18,7 +19,7 @@ public class Block extends GameInit {
 	
 
 
-	public Block(final Block block, final int xPos, final int yPos, final int width, final int height, final Color c ){
+	public Block(final Block block, final int xPos, final int yPos, final int width, final int height, final Color c, final boolean hit ){
 		this.setBlock(block);
 		this.xPos = xPos;
 		this.yPos = yPos;
@@ -26,6 +27,7 @@ public class Block extends GameInit {
 		this.width = width;
 		this.rect = new Rectangle(xPos, yPos, 20, 20);
 		this.c = c;
+		this.setHit(hit);
 		
 	}
 	
@@ -76,6 +78,16 @@ public class Block extends GameInit {
 	public void setColor(Color black) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	public boolean isHit() {
+		return hit;
+	}
+
+
+	public void setHit(boolean hit) {
+		this.hit = hit;
 	}
 		
 	}

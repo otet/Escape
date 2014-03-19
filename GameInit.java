@@ -10,6 +10,7 @@ public abstract class GameInit {
 	protected int height;
 	protected int width;
 	protected int health;
+	protected int hit;
 	
 	abstract void draw(Graphics g);	
 	abstract void update(final Shoot shooting, final int id);

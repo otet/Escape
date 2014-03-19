@@ -27,7 +27,7 @@ public class Shoot extends JApplet implements  Runnable {
 	int height = 500;
 	
 	private Player player1;
-	private Block block1;
+	public Block block1;
 	private Graphics graphics;
 	public Image image = null;
 
@@ -35,7 +35,7 @@ public class Shoot extends JApplet implements  Runnable {
 	public boolean player1Right = false;
 
 	CopyOnWriteArrayList<Bullet> bullets = new CopyOnWriteArrayList<Bullet>();
-
+	CopyOnWriteArrayList<Block> blocks = new CopyOnWriteArrayList<Block>();
 	Thread anim;
 	
 	
@@ -51,7 +51,7 @@ public class Shoot extends JApplet implements  Runnable {
 		
 		player1 = new Player(200, 407, 20, 90, 10, Color.BLACK);
 		
-		block1 = new Block(block1, 200, 100, 20, 20, Color.BLACK);
+		block1 = new Block(block1, 200, 100, 20, 20, Color.BLACK, false);
 
 		
 		
@@ -110,10 +110,12 @@ public class Shoot extends JApplet implements  Runnable {
     	
 		player1.draw(g);
 	    player1.update(this, 1);
-	    
-	    block1.draw(g);
-	    block1.update(this, 2);
-
+	    if(block1.isHit()){
+	    	
+	    }else{
+		    block1.draw(g);
+		    block1.update(this, 2);
+	    }
 		
 		
 	}
@@ -196,7 +198,7 @@ public class Shoot extends JApplet implements  Runnable {
 			
 			repaint();
 			try {
-				Thread.sleep(200);
+				Thread.sleep(33);
 			} catch (InterruptedException e) {}
 		}
 	}

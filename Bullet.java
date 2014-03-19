@@ -41,12 +41,28 @@ public class Bullet extends GameInit {
 		} */ 
 		
 
-		if (xPos < 5 || xPos > 495 && rect.intersects(block.rect)){
+		/*if (xPos < 5 || xPos > 200 && rect.intersects(block.rect)){
+			System.out.println("touched");
+			shooting.bullets.remove(this);
+		} else {
+			yPos += dy;
+			rect.y += dy;
+		}*/
+		
+		/** Newer version of object collision**/
+		
+		if (xPos > 200 && xPos<220 && yPos >100 && yPos<220 && !shooting.block1.isHit()){
+			System.out.println("touched ");
+			//player.health -=1;
+			shooting.block1.setHit(true);
+			
 			shooting.bullets.remove(this);
 		} else {
 			yPos += dy;
 			rect.y += dy;
 		}
+		
+		
 		
 	/*	if (rect.intersects(block.rect)){
 			
