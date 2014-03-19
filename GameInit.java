@@ -16,6 +16,11 @@ public abstract class GameInit {
 	abstract void update(final Shoot shooting, final int id);
 	abstract Image getImage(String img);
 	
+	
+	public Rectangle getBoundingBox(){
+		return new Rectangle(xPos, yPos, width, height);
+	}
+	
 	public Image getImg() {
 		return img;
 	}

@@ -28,6 +28,7 @@ public class Shoot extends JApplet implements  Runnable {
 	
 	private Player player1;
 	public Block block1;
+	public Block badBlock;
 	private Graphics graphics;
 	public Image image = null;
 
@@ -49,10 +50,12 @@ public class Shoot extends JApplet implements  Runnable {
 		setFocusable(true);
 		setVisible(true);
 		
-		player1 = new Player(200, 407, 20, 90, 10, Color.BLACK);
+		player1 = new Player(200, 427, 20, 90, 10, Color.BLACK);
 		
 		block1 = new Block(block1, 200, 100, 20, 20, Color.BLACK, false);
-
+		
+		Block evilBlock = new Block(badBlock, 250, 85, 20, 20, Color.BLACK, false);
+		blocks.add(evilBlock);
 		
 		
 		System.out.println("init() done");
@@ -81,7 +84,7 @@ public class Shoot extends JApplet implements  Runnable {
 		
 		paintComponent(graphics);
 		g.drawImage(image, 0, 0, this);
-		repaint();
+	
 		
 	
 		
@@ -94,7 +97,10 @@ public class Shoot extends JApplet implements  Runnable {
 		if (player1.getHealth() > 0 ){
 		for (Bullet bullet : bullets){
 			bullet.draw(g);
-			bullet.update(this, 0);
+			}
+		for (Block evilBlock : blocks){
+			evilBlock.draw(g);
+		//	evilBlock.update(this, 0);
 			}
 		} else if (player1.getHealth() == 0){
 			g.setColor(Color.yellow);
@@ -109,17 +115,26 @@ public class Shoot extends JApplet implements  Runnable {
     	
     	
 		player1.draw(g);
-	    player1.update(this, 1);
+
 	    if(block1.isHit()){
 	    	
 	    }else{
 		    block1.draw(g);
-		    block1.update(this, 2);
+		   
 	    }
 		
 		
 	}
 	
+	public void gameUpdate(){
+		player1.update(this, 1);	
+		block1.update(this, 2);
+		
+		for (Bullet bullet : bullets){
+			bullet.update(this, 0);
+			}
+		
+	}
 	
 	class KeyL extends KeyAdapter {
 		
@@ -158,7 +173,7 @@ public class Shoot extends JApplet implements  Runnable {
 				break;
 				
 			case KeyEvent.VK_SPACE:
-				Bullet player1Bullet = new Bullet(player1, -1, player1.getxPos() + 9, player1.getyPos(), 2, 10, Color.BLACK);
+				Bullet player1Bullet = new Bullet(player1, -8, player1.getxPos() + 9, player1.getyPos(), 2, 10, Color.BLACK);
 				bullets.add(player1Bullet); 
 				break;
 				
@@ -193,12 +208,11 @@ public class Shoot extends JApplet implements  Runnable {
 	
 	public void run() {
 		while (anim != null) {
-			player1.update(this, 1);
-
-			
+			gameUpdate();
 			repaint();
+			
 			try {
-				Thread.sleep(33);
+				Thread.sleep(25);
 			} catch (InterruptedException e) {}
 		}
 	}

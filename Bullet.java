@@ -19,7 +19,6 @@ public class Bullet extends GameInit {
 		this.yPos = yPos;
 		this.height = height;
 		this.width = width;
-		this.rect = new Rectangle(xPos, yPos, width, height);
 		this.c = c;
 	}
 	
@@ -28,6 +27,8 @@ public class Bullet extends GameInit {
 		g.setColor(c);
 		g.fillRect(xPos, yPos, 2, 5);
 	}
+	
+
 
 	@Override
 	void update(final Shoot shooting, final int id) {
@@ -41,26 +42,28 @@ public class Bullet extends GameInit {
 		} */ 
 		
 
-		/*if (xPos < 5 || xPos > 200 && rect.intersects(block.rect)){
-			System.out.println("touched");
+		if ((yPos < 5 || yPos > 496) && !shooting.block1.isHit()){
+		
 			shooting.bullets.remove(this);
 		} else {
 			yPos += dy;
-			rect.y += dy;
-		}*/
+		
+		}
 		
 		/** Newer version of object collision**/
 		
-		if (xPos > 200 && xPos<220 && yPos >100 && yPos<220 && !shooting.block1.isHit()){
+	/*	if (xPos > 200 && xPos<220 && yPos >100 && yPos<220 && !shooting.block1.isHit()){
 			System.out.println("touched ");
 			//player.health -=1;
 			shooting.block1.setHit(true);
 			
 			shooting.bullets.remove(this);
+			
+			shooting.blocks.remove(this);
 		} else {
 			yPos += dy;
 			rect.y += dy;
-		}
+		}*/
 		
 		
 		

@@ -56,15 +56,15 @@ public class Player extends GameInit {
 	
 			if (shooting.player1Left){
 				if(!(xPos < 10)){
-					xPos--;
-					rect.x--;
+					xPos-=3;
+					rect.x-=3;
 					
 		}
 				}
 			if (shooting.player1Right){
 				if (!(xPos > shooting.getWidth() - 25)){
-					xPos++;
-					rect.x++;
+					xPos+=3;
+					rect.x+=3;
 			}
 			
 		}
