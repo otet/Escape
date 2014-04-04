@@ -41,7 +41,7 @@ public class Bullet extends GameInit {
 					
 		} */ 
 		
-
+		
 		if ((yPos < 5 || yPos > 496) && !shooting.block1.isHit()){
 		
 			shooting.bullets.remove(this);
@@ -52,22 +52,23 @@ public class Bullet extends GameInit {
 		
 		/** Newer version of object collision**/
 		
-	/*	if (xPos > 200 && xPos<220 && yPos >100 && yPos<220 && !shooting.block1.isHit()){
+		if (xPos > 200 && xPos<220 && yPos >100 && yPos<220 && !shooting.block1.isHit()){
 			System.out.println("touched ");
 			//player.health -=1;
+			
 			shooting.block1.setHit(true);
 			
 			shooting.bullets.remove(this);
-			
-			shooting.blocks.remove(this);
+		
+			//shooting.blocks.remove(this);
 		} else {
 			yPos += dy;
-			rect.y += dy;
-		}*/
+			//rect.y += dy;
+		}
 		
 		
 		
-	/*	if (rect.intersects(block.rect)){
+		/*if (rect.intersects(block.rect)){
 			
 		shooting.bullets.remove(this); 
 				

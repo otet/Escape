@@ -33,7 +33,8 @@ public class Shoot extends JApplet implements  Runnable{
 	int width = 400;
 	int height = 500;
 	
-	private Player player1;
+	public Player player1;
+	
 	public Block block1;
 	public Block block2;
 	public Block block3;
@@ -68,7 +69,7 @@ public class Shoot extends JApplet implements  Runnable{
 		setFocusable(true);
 		setVisible(true);
 		
-		player1 = new Player(200, 427, 20, 90, 10, Color.BLACK);
+		player1 = new Player(200, 427, 20, 90, 10, Color.darkGray);
 		
 		block1 = new Block(block1, 200, 100, 2, 20, 20, Color.BLACK, false);
 		block2 = new Block(block2, 100, 25, 3, 20, 20, Color.BLACK, false);
@@ -81,6 +82,7 @@ public class Shoot extends JApplet implements  Runnable{
 	/*	Block evilBlock = new Block(badBlock, 250, 85, 20, 20, Color.BLACK, false);
 		blocks.add(evilBlock);*/
 		
+<<<<<<< HEAD
 		try {
             SwingUtilities.invokeAndWait(new Runnable() {
                 public void run() {
@@ -133,6 +135,20 @@ public class Shoot extends JApplet implements  Runnable{
 	            System.out.println("Button was clicked");
 	            }
 	          });
+=======
+
+		
+		System.out.println("init() done");
+
+	}
+	
+
+	
+	public void start(){
+		
+		anim = new Thread(this);
+		anim.start();
+>>>>>>> 40dbdcf3ee7e47c77fdcdc77e1cd67f413bf4f70
 		
 		System.out.println("start() done");
 	}
