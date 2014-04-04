@@ -92,28 +92,7 @@ public class Shoot extends JApplet implements  Runnable{
             //System.err.println("method didn't complete successfully");
         }
 		
-		 start.addActionListener(new ActionListener() {
-	            public void actionPerformed(ActionEvent e) {
-	            
-
-
-	         
-	          
-	            //	repaint();
-	            	
-	        	String title = "Escape!";  
-	            String message = "YEAH FUN!\nWatch out for the bad guys!";
-	            JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
-	            
-	            anim.start();
-	            
-	           
-	            
-	          
-
-	            System.out.println("Button was clicked");
-	            }
-	          });
+		
 		
 		
 		System.out.println("init() done");
@@ -130,6 +109,30 @@ public class Shoot extends JApplet implements  Runnable{
 		
 		anim = new Thread(this);
 	//	anim.start();
+		
+		 start.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	            
+
+
+	         
+	          
+	            //	repaint();
+	            	
+	        	String title = "Escape!";  
+	            String message = "YEAH FUN!\nWatch out for the bad guys!";
+	            JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
+	           
+	            
+	            anim.start();
+	            
+	           
+	            
+	          
+
+	            System.out.println("Button was clicked");
+	            }
+	          });
 		
 		System.out.println("start() done");
 	}
