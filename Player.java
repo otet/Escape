@@ -10,7 +10,7 @@ public class Player extends GameInit {
 	
 	private int id;
 	private Color c;
-	
+	public boolean playerhit = false;
 	
 	
 	//Player Creation
@@ -68,10 +68,34 @@ public class Player extends GameInit {
 			}
 			
 		}
-			
-			
-			
+			/*if(shooting.block1.xPos+20 >= shooting.player1.xPos+20 && shooting.block1.yPos >= shooting.player1.yPos-45 && !playerhit)
+			{
+				shooting.player1.setHealth(shooting.player1.getHealth() - 1);
+				playerhit = true;
+				System.out.println("is hit");
+			}else{
+				if(shooting.block1.yPos ==0){
+					playerhit = false;
+					System.out.println("false again");
+				}
+			}*/
+
+
+			if(((shooting.player1.xPos == shooting.block1.xPos)) && shooting.player1.yPos-45 == shooting.block1.yPos && !playerhit)
+			{
+				shooting.player1.setHealth(shooting.player1.getHealth() - 1);
+				playerhit = true;
+				System.out.println("is hit: "+shooting.player1.xPos);
+			}else{
+				if(shooting.block1.yPos ==0){
+					playerhit = false;
+					System.out.println("false again");
+				}
 			}
+	
+			
+			
+	}
 		
 	}
 	

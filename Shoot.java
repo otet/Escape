@@ -33,7 +33,8 @@ public class Shoot extends JApplet implements  Runnable{
 	int width = 400;
 	int height = 500;
 	
-	private Player player1;
+	public Player player1;
+	
 	public Block block1;
 	public Block block2;
 	public Block block3;
@@ -68,7 +69,7 @@ public class Shoot extends JApplet implements  Runnable{
 		setFocusable(true);
 		setVisible(true);
 		
-		player1 = new Player(200, 427, 20, 90, 10, Color.BLACK);
+		player1 = new Player(200, 427, 20, 90, 10, Color.darkGray);
 		
 		block1 = new Block(block1, 200, 100, 2, 20, 20, Color.BLACK, false);
 		block2 = new Block(block2, 100, 25, 3, 20, 20, Color.BLACK, false);
@@ -81,55 +82,18 @@ public class Shoot extends JApplet implements  Runnable{
 	/*	Block evilBlock = new Block(badBlock, 250, 85, 20, 20, Color.BLACK, false);
 		blocks.add(evilBlock);*/
 		
-		try {
-            SwingUtilities.invokeAndWait(new Runnable() {
-                public void run() {
-                    createGUI();
-                   
-                }
-            });
-        } catch (Exception r) { 
-            //System.err.println("method didn't complete successfully");
-        }
-		
-		 start.addActionListener(new ActionListener() {
-	            public void actionPerformed(ActionEvent e) {
-	            
 
-
-	         
-	          
-	            //	repaint();
-	            	
-	        	String title = "Escape!";  
-	            String message = "YEAH FUN!\nWatch out for the bad guys!";
-	            JOptionPane.showMessageDialog(null, message, title, JOptionPane.INFORMATION_MESSAGE);
-	            
-	            anim.start();
-	            
-	           
-	            
-	          
-
-	            System.out.println("Button was clicked");
-	            }
-	          });
-		
 		
 		System.out.println("init() done");
 
 	}
-	
-	/*public Shoot(){
-	
-	}*/
 	
 
 	
 	public void start(){
 		
 		anim = new Thread(this);
-	//	anim.start();
+		anim.start();
 		
 		System.out.println("start() done");
 	}
