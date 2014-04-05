@@ -71,7 +71,7 @@ public class Shoot extends JApplet implements  Runnable{
 
 	/*	Block evilBlock = new Block(badBlock, 250, 85, 20, 20, Color.BLACK, false);
 		blocks.add(evilBlock);*/
-		player1 = new Player(200, 427, 20, 90, 300, Color.darkGray);
+		player1 = new Player(200, 427, 20, 90,300, Color.darkGray, 0);
 		
 		block1 = new Block(block1, 200, 100, 2, 20, 20, Color.BLACK, false);
 		block2 = new Block(block2, 100, 25, 3, 20, 20, Color.BLACK, false);
@@ -124,7 +124,7 @@ public class Shoot extends JApplet implements  Runnable{
 		//	evilBlock.update(this, 0);
 			}*/
 		} else if (player1.getHealth() <= 0){
-			g.setColor(Color.yellow);
+			g.setColor(Color.BLACK);
 			g.drawString("You Lose!", 250, 190);
 		} 
 		
@@ -134,7 +134,8 @@ public class Shoot extends JApplet implements  Runnable{
 		
 		g.setColor(Color.BLACK);
     	g.drawString("Health: " + Integer.toString(player1.getHealth()), 10, 15);
-    
+		g.setColor(Color.BLACK);
+    	g.drawString("Score: " + Integer.toString(player1.score), 300, 15);
 	
     	
     	
@@ -179,6 +180,8 @@ public class Shoot extends JApplet implements  Runnable{
 		}else{
 			g.drawString("Escape Game!", 150,100);
 			g.drawString("to escape, you need to dodge the squares coming down!", 50,150);
+			g.drawString("use the arrow keys to move left and right and space bar to shoot", 30,170);
+			
 			g.drawString("now please hit space to start the game", 100,200);
 			
 		}

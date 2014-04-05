@@ -50,7 +50,7 @@ public class Bullet extends GameInit {
 		
 			
 			shooting.block1.setHit(true);
-			
+			shooting.player1.score +=50;
 			shooting.bullets.remove(this);
 		
 			
@@ -59,7 +59,7 @@ public class Bullet extends GameInit {
 			
 			
 			shooting.block2.setHit(true);
-			
+			shooting.player1.score +=50;
 			shooting.bullets.remove(this);
 		
 			
@@ -69,7 +69,7 @@ public class Bullet extends GameInit {
 			
 			
 			shooting.block3.setHit(true);
-			
+			shooting.player1.score +=50;
 			shooting.bullets.remove(this);
 		
 			
@@ -79,7 +79,7 @@ public class Bullet extends GameInit {
 			
 			
 			shooting.block4.setHit(true);
-			
+			shooting.player1.score +=50;
 			shooting.bullets.remove(this);
 		
 			
@@ -89,7 +89,7 @@ public class Bullet extends GameInit {
 			
 			
 			shooting.block5.setHit(true);
-			
+			shooting.player1.score +=50;
 			shooting.bullets.remove(this);
 		
 			
@@ -99,7 +99,7 @@ public class Bullet extends GameInit {
 			
 			
 			shooting.block6.setHit(true);
-			
+			shooting.player1.score +=50;
 			shooting.bullets.remove(this);
 		
 			
