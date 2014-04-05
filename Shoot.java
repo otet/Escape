@@ -69,7 +69,7 @@ public class Shoot extends JApplet implements  Runnable{
 		setFocusable(true);
 		setVisible(true);
 		
-		player1 = new Player(200, 427, 20, 90, 10, Color.darkGray);
+		player1 = new Player(200, 427, 20, 90, 300, Color.darkGray);
 		
 		block1 = new Block(block1, 200, 100, 2, 20, 20, Color.BLACK, false);
 		block2 = new Block(block2, 100, 25, 3, 20, 20, Color.BLACK, false);
