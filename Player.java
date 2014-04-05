@@ -81,13 +81,13 @@ public class Player extends GameInit {
 			}*/
 
 
-			if(shooting.player1.xPos >= shooting.block1.xPos && shooting.player1.xPos+20 <= shooting.block1.xPos+20 && shooting.player1.yPos-45 == shooting.block1.yPos && !playerhit)
+			if(shooting.player1.xPos <= shooting.block1.xPos+20 && shooting.player1.xPos+20 >= shooting.block1.xPos && shooting.player1.yPos-40 <= shooting.block1.yPos   && !playerhit)
 			{
 				shooting.player1.setHealth(shooting.player1.getHealth() - 1);
 				playerhit = true;
 				System.out.println("is hit: "+shooting.player1.xPos);
 			}else{
-				if(shooting.block1.yPos ==0){
+				if(shooting.player1.xPos > shooting.block1.xPos+20 || shooting.player1.xPos+20 < shooting.block1.xPos && shooting.player1.yPos-40 <= shooting.block1.yPos  ){
 					playerhit = false;
 					System.out.println("false again");
 				}
