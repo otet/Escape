@@ -33,13 +33,6 @@ public class Bullet extends GameInit {
 	@Override
 	void update(final Shoot shooting, final int id) {
 		
-	// Code for subtracting health when player is subject to crash
-		
-		/*if (rect.intersects(player.rect)){
-			player.setHealth(player.getHealth() - 1);
-			shooting.bullets.remove(this); 
-					
-		} */ 
 		
 		
 		if ((yPos < 5 || yPos > 496) && !shooting.block1.isHit()){
@@ -53,76 +46,68 @@ public class Bullet extends GameInit {
 		/** Newer version of object collision**/
 		
 		if (xPos > 200 && xPos<220 && yPos >100 && yPos<220 && !shooting.block1.isHit()){
-			System.out.println("touched ");
-			//player.health -=1;
+			
+		
 			
 			shooting.block1.setHit(true);
 			
 			shooting.bullets.remove(this);
 		
-			//shooting.blocks.remove(this);
+			
 		}
 		else if (xPos > 100 && xPos<120 && yPos >100 && yPos<220 && !shooting.block2.isHit()){
-			System.out.println("touched ");
-			//player.health -=1;
+			
 			
 			shooting.block2.setHit(true);
 			
 			shooting.bullets.remove(this);
 		
-			//shooting.blocks.remove(this);
+			
 		}
 		else if (xPos > 370 && xPos<390 && yPos >100 && yPos<220 && !shooting.block3.isHit()){
-			System.out.println("touched ");
-			//player.health -=1;
+			
+			
 			
 			shooting.block3.setHit(true);
 			
 			shooting.bullets.remove(this);
 		
-			//shooting.blocks.remove(this);
+			
 		}
 		else if (xPos > 270 && xPos<290 && yPos >100 && yPos<220 && !shooting.block4.isHit()){
-			System.out.println("touched ");
-			//player.health -=1;
+			
+			
 			
 			shooting.block4.setHit(true);
 			
 			shooting.bullets.remove(this);
 		
-			//shooting.blocks.remove(this);
+			
 		}
 		else if (xPos > 145 && xPos<165 && yPos >100 && yPos<220 && !shooting.block5.isHit()){
-			System.out.println("touched ");
-			//player.health -=1;
+			
+			
 			
 			shooting.block5.setHit(true);
 			
 			shooting.bullets.remove(this);
 		
-			//shooting.blocks.remove(this);
+			
 		}
 		else if (xPos > 40 && xPos<60 && yPos >100 && yPos<220 && !shooting.block6.isHit()){
-			System.out.println("touched ");
-			//player.health -=1;
+			
+			
 			
 			shooting.block6.setHit(true);
 			
 			shooting.bullets.remove(this);
 		
-			//shooting.blocks.remove(this);
+			
 		}else {
 			yPos += dy;
-			//rect.y += dy;
+			
 		}
 		
-		
-		
-		/*if (rect.intersects(block.rect)){
-			
-		shooting.bullets.remove(this); 
-				
-	}  */
 	}
 
 	public int getDy() {

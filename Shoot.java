@@ -44,7 +44,7 @@ public class Shoot extends JApplet implements  Runnable{
 	public Block badBlock;
 	private Graphics graphics;
 	public Image image = null;
-
+	public boolean gamestart = false;
 	public boolean player1Left = false;
 	public boolean player1Right = false;
 
@@ -68,17 +68,7 @@ public class Shoot extends JApplet implements  Runnable{
 		addKeyListener(new KeyL());
 		setFocusable(true);
 		setVisible(true);
-		
-		player1 = new Player(200, 427, 20, 90, 300, Color.darkGray);
-		
-		block1 = new Block(block1, 200, 100, 2, 20, 20, Color.BLACK, false);
-		block2 = new Block(block2, 100, 25, 3, 20, 20, Color.BLACK, false);
-		block3 = new Block(block3, 370, 60, 2, 20, 20, Color.BLACK, false);
-		block4 = new Block(block4, 270, 8, 1, 20, 20, Color.BLACK, false);
-		block5 = new Block(block5, 145, 4, 2, 20, 20, Color.BLACK, false);
-		block6 = new Block(block6, 40, 42, 3, 20, 20, Color.BLACK, false);
 
-		
 	/*	Block evilBlock = new Block(badBlock, 250, 85, 20, 20, Color.BLACK, false);
 		blocks.add(evilBlock);*/
 		
@@ -116,6 +106,7 @@ public class Shoot extends JApplet implements  Runnable{
 	
 	
 	public void paintComponent (Graphics g){
+		if(gamestart){
 		if (player1.getHealth() > 0 ){
 		for (Bullet bullet : bullets){
 			bullet.draw(g);
@@ -128,6 +119,16 @@ public class Shoot extends JApplet implements  Runnable{
 			g.setColor(Color.yellow);
 			g.drawString("You Lose!", 250, 190);
 		} 
+		
+		player1 = new Player(200, 427, 20, 90, 300, Color.darkGray);
+		
+		block1 = new Block(block1, 200, 100, 2, 20, 20, Color.BLACK, false);
+		block2 = new Block(block2, 100, 25, 3, 20, 20, Color.BLACK, false);
+		block3 = new Block(block3, 370, 60, 2, 20, 20, Color.BLACK, false);
+		block4 = new Block(block4, 270, 8, 1, 20, 20, Color.BLACK, false);
+		block5 = new Block(block5, 145, 4, 2, 20, 20, Color.BLACK, false);
+		block6 = new Block(block6, 40, 42, 3, 20, 20, Color.BLACK, false);
+
 		
 		
 		g.setColor(Color.BLACK);
@@ -147,7 +148,7 @@ public class Shoot extends JApplet implements  Runnable{
 		if(block2.isHit()){
 			
 			  }else{
-				  block2.draw(g);  
+			block2.draw(g);  
 			    }
 
 		if(block3.isHit()){
@@ -174,7 +175,7 @@ public class Shoot extends JApplet implements  Runnable{
 		    block6.draw(g);		   
 	    }
 		
-		
+		}
 	}
 	
     private void createGUI() {
@@ -316,7 +317,9 @@ public class Shoot extends JApplet implements  Runnable{
 	
 	public void run() {
 		while (anim != null) {
+			if(gamestart){
 			gameUpdate();
+			}
 			repaint();
 			
 			try {

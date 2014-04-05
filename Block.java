@@ -59,22 +59,22 @@ public class Block extends GameInit {
 	@Override
 	void update(final Shoot shooting, final int id) {
 		
-			if (shooting.block1.getyPos()== 490){
+			if (shooting.block1.getyPos()>= 490){
 				shooting.block1.setyPos(0);
 			}
-			if (shooting.block2.getyPos()== 490){
+			if (shooting.block2.getyPos()>= 490){
 				shooting.block2.setyPos(0);
 			}
-			if (shooting.block3.getyPos()== 490){
+			if (shooting.block3.getyPos()>= 490){
 				shooting.block3.setyPos(0);
 			}
-			if (shooting.block4.getyPos()== 490){
+			if (shooting.block4.getyPos()>= 490){
 				shooting.block4.setyPos(0);
 			}
-			if (shooting.block5.getyPos()== 490){
+			if (shooting.block5.getyPos()>= 490){
 				shooting.block5.setyPos(0);
 			}
-			if (shooting.block6.getyPos()== 490){
+			if (shooting.block6.getyPos()>= 490){
 				shooting.block6.setyPos(0);
 			}
 		if(!shooting.block1.isHit()){
