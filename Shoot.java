@@ -44,7 +44,7 @@ public class Shoot extends JApplet implements  Runnable{
 	public Block badBlock;
 	private Graphics graphics;
 	public Image image = null;
-
+	public boolean gamestart = false;
 	public boolean player1Left = false;
 	public boolean player1Right = false;
 
@@ -68,7 +68,9 @@ public class Shoot extends JApplet implements  Runnable{
 		addKeyListener(new KeyL());
 		setFocusable(true);
 		setVisible(true);
-		
+
+	/*	Block evilBlock = new Block(badBlock, 250, 85, 20, 20, Color.BLACK, false);
+		blocks.add(evilBlock);*/
 		player1 = new Player(200, 427, 20, 90, 300, Color.darkGray);
 		
 		block1 = new Block(block1, 200, 100, 2, 20, 20, Color.BLACK, false);
@@ -77,11 +79,6 @@ public class Shoot extends JApplet implements  Runnable{
 		block4 = new Block(block4, 270, 8, 1, 20, 20, Color.BLACK, false);
 		block5 = new Block(block5, 145, 4, 2, 20, 20, Color.BLACK, false);
 		block6 = new Block(block6, 40, 42, 3, 20, 20, Color.BLACK, false);
-
-		
-	/*	Block evilBlock = new Block(badBlock, 250, 85, 20, 20, Color.BLACK, false);
-		blocks.add(evilBlock);*/
-		
 
 		
 		System.out.println("init() done");
@@ -116,6 +113,8 @@ public class Shoot extends JApplet implements  Runnable{
 	
 	
 	public void paintComponent (Graphics g){
+		if(gamestart){
+
 		if (player1.getHealth() > 0 ){
 		for (Bullet bullet : bullets){
 			bullet.draw(g);
@@ -124,10 +123,13 @@ public class Shoot extends JApplet implements  Runnable{
 			evilBlock.draw(g);
 		//	evilBlock.update(this, 0);
 			}*/
-		} else if (player1.getHealth() == 0){
+		} else if (player1.getHealth() <= 0){
 			g.setColor(Color.yellow);
 			g.drawString("You Lose!", 250, 190);
 		} 
+		
+
+
 		
 		
 		g.setColor(Color.BLACK);
@@ -147,7 +149,7 @@ public class Shoot extends JApplet implements  Runnable{
 		if(block2.isHit()){
 			
 			  }else{
-				  block2.draw(g);  
+			block2.draw(g);  
 			    }
 
 		if(block3.isHit()){
@@ -174,7 +176,12 @@ public class Shoot extends JApplet implements  Runnable{
 		    block6.draw(g);		   
 	    }
 		
-		
+		}else{
+			g.drawString("Escape Game!", 150,100);
+			g.drawString("to escape, you need to dodge the squares coming down!", 50,150);
+			g.drawString("now please hit space to start the game", 100,200);
+			
+		}
 	}
 	
     private void createGUI() {
@@ -255,6 +262,9 @@ public class Shoot extends JApplet implements  Runnable{
 		case KeyEvent.VK_LEFT:
 			player1Left = true;
 			break;
+		case KeyEvent.VK_ENTER:
+			gamestart = true;
+			break;
 		
 		case KeyEvent.VK_RIGHT:
 			player1Right = true;
@@ -316,7 +326,9 @@ public class Shoot extends JApplet implements  Runnable{
 	
 	public void run() {
 		while (anim != null) {
+			if(gamestart){
 			gameUpdate();
+			}
 			repaint();
 			
 			try {
